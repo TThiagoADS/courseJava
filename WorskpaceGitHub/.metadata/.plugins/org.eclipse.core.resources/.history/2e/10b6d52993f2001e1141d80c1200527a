@@ -1,0 +1,18 @@
+package Services;
+
+import java.util.List;
+
+import entities.Employee;
+
+public class ProductService {
+
+	public double filteredSum(List<Employee> list) {
+		double sum = 0.0;
+		for (Employee p : list) {
+			if (p.getName().charAt(0) == 'M') {
+				sum += p.getSalary();
+			}
+		}
+		return sum;
+	}
+}

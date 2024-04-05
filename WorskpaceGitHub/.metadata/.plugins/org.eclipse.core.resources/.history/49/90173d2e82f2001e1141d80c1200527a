@@ -1,0 +1,60 @@
+
+package app;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Employee;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		Locale.setDefault(Locale.US);
+		
+		List <Employee> emp = new ArrayList<>();
+		
+		System.out.print("Enter full file path: ");
+		String path = sc.nextLine();
+		System.out.print("Enter salary: ");
+		double salary = sc.nextDouble();
+		System.out.println("Email of people whose salary is more than " + salary + ": ");
+		
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+			
+			String line = br.readLine();
+			while (line != null) {
+				String [] vect = line.split(",");
+				String name = vect[0];
+				String email = vect[1];
+				double salaryEmp = Double.parseDouble(vect[2]);
+				
+				Employee employee = new Employee(name, email, salaryEmp);
+				emp.add(employee);
+				
+				
+				
+				emp.removeIf(p -> p.getSalary() <= salary);
+			}
+		}
+		catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+			
+			
+			
+		
+		
+		
+		
+		
+		sc.close();
+
+	}
+
+}

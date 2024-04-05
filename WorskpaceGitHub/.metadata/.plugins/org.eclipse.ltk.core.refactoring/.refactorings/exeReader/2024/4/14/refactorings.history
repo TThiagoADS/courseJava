@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;Services&apos; to &apos;exeExpressLambda/src&apos;&#x0A;- Original project: &apos;exeReader&apos;&#x0A;- Destination element: &apos;exeExpressLambda/src&apos;&#x0A;- Original element: &apos;exeReader/src/Services&apos;" description="Copy package" destination="=exeExpressLambda/src" element1="/src&lt;Services" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1712240472917" version="1.0"/>
+</session>
